@@ -44,7 +44,7 @@ namespace CALCULATRICE
         }
 
         // Récupère le nombre affiché à l'écran (0 si l'écran est vide)
-        private double LireNombre()
+        public double LireNombre()
         {
             if (TB_Display.Text == "")
                 return 0;
@@ -54,7 +54,7 @@ namespace CALCULATRICE
         }
 
         // Ajoute un chiffre à l'écran
-        private void AjouterChiffre(string chiffre)
+        public void AjouterChiffre(string chiffre)
         {
             // Remplace le zéro de départ par le chiffre
             if (TB_Display.Text == "0" || TB_Display.Text == "")
@@ -64,58 +64,58 @@ namespace CALCULATRICE
         }
 
         // ----- Boutons des chiffres -----
-        private void BTN_One_Click(object sender, RoutedEventArgs e)
+        public void BTN_One_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("1");
         }
 
-        private void BTN_Two_Click(object sender, RoutedEventArgs e)
+        public void BTN_Two_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("2");
         }
 
-        private void BTN_Three_Click(object sender, RoutedEventArgs e)
+        public void BTN_Three_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("3");
         }
 
-        private void BTN_Four_Click(object sender, RoutedEventArgs e)
+        public void BTN_Four_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("4");
         }
 
-        private void BTN_Five_Click(object sender, RoutedEventArgs e)
+        public void BTN_Five_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("5");
         }
 
-        private void BTN_Six_Click(object sender, RoutedEventArgs e)
+        public void BTN_Six_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("6");
         }
 
-        private void BTN_Seven_Click(object sender, RoutedEventArgs e)
+        public void BTN_Seven_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("7");
         }
 
-        private void BTN_Eight_Click(object sender, RoutedEventArgs e)
+        public void BTN_Eight_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("8");
         }
 
-        private void BTN_Nine_Click(object sender, RoutedEventArgs e)
+        public void BTN_Nine_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("9");
         }
 
-        private void BTN_Zero_Click(object sender, RoutedEventArgs e)
+        public void BTN_Zero_Click(object sender, RoutedEventArgs e)
         {
             AjouterChiffre("0");
         }
 
         // Enregistre le premier nombre et l'opération choisie
-        private void ChoisirOperation(char operation)
+        public void ChoisirOperation(char operation)
         {
             NB1 = LireNombre();
             Oper = operation;
@@ -125,28 +125,28 @@ namespace CALCULATRICE
         }
 
         // ----- Boutons des opérations -----
-        private void BTN_Add_Click(object sender, RoutedEventArgs e)
+        public void BTN_Add_Click(object sender, RoutedEventArgs e)
         {
             ChoisirOperation('+');
         }
 
-        private void BTN_Subtract_Click(object sender, RoutedEventArgs e)
+        public void BTN_Subtract_Click(object sender, RoutedEventArgs e)
         {
             ChoisirOperation('-');
         }
 
-        private void BTN_Multiply_Click(object sender, RoutedEventArgs e)
+        public void BTN_Multiply_Click(object sender, RoutedEventArgs e)
         {
             ChoisirOperation('*');
         }
 
-        private void BTN_Divide_Click(object sender, RoutedEventArgs e)
+        public void BTN_Divide_Click(object sender, RoutedEventArgs e)
         {
             ChoisirOperation('/');
         }
 
         // Effectue le calcul quand on appuie sur =
-        private void BTN_Equals_Click(object sender, RoutedEventArgs e)
+        public void BTN_Equals_Click(object sender, RoutedEventArgs e)
         {
             // Si aucune opération n'a été choisie, on ne fait rien
             if (Oper == ' ')
@@ -164,7 +164,7 @@ namespace CALCULATRICE
         }
 
         // Remet la calculatrice à zéro
-        private void BTN_Clear_Click(object sender, RoutedEventArgs e)
+        public void BTN_Clear_Click(object sender, RoutedEventArgs e)
         {
             TB_Display.Text = "0";
             NB1 = 0;
@@ -173,14 +173,14 @@ namespace CALCULATRICE
         }
 
         // Change le signe du nombre : positif <-> négatif
-        private void BTN_Sign_Click(object sender, RoutedEventArgs e)
+        public void BTN_Sign_Click(object sender, RoutedEventArgs e)
         {
             double nombre = LireNombre();
             TB_Display.Text = (-nombre).ToString();
         }
 
         // Calcule le cosinus (angle en degrés)
-        private void BTN_Cos_Click(object sender, RoutedEventArgs e)
+        public void BTN_Cos_Click(object sender, RoutedEventArgs e)
         {
             double nombre = LireNombre();
 
@@ -192,7 +192,7 @@ namespace CALCULATRICE
         }
 
         // Calcule le sinus (angle en degrés)
-        private void BTN_Sin_Click(object sender, RoutedEventArgs e)
+        public void BTN_Sin_Click(object sender, RoutedEventArgs e)
         {
             double nombre = LireNombre();
 
@@ -202,7 +202,7 @@ namespace CALCULATRICE
         }
 
         // Calcule la tangente (angle en degrés)
-        private void BTN_Tan_Click(object sender, RoutedEventArgs e)
+        public void BTN_Tan_Click(object sender, RoutedEventArgs e)
         {
             double nombre = LireNombre();
 
@@ -219,7 +219,7 @@ namespace CALCULATRICE
         }
 
         // Calcule la racine carrée
-        private void BTN_SquareRoot_Click(object sender, RoutedEventArgs e)
+        public void BTN_SquareRoot_Click(object sender, RoutedEventArgs e)
         {
             double nombre = LireNombre();
 
@@ -234,7 +234,7 @@ namespace CALCULATRICE
         }
 
         // Ajoute une virgule pour saisir un nombre décimal
-        private void BTN_Comma_Click(object sender, RoutedEventArgs e)
+        public void BTN_Comma_Click(object sender, RoutedEventArgs e)
         {
             // Si l'écran est vide, on commence par "0,"
             if (TB_Display.Text == "")
@@ -246,7 +246,7 @@ namespace CALCULATRICE
         }
 
         // Divise le nombre affiché par 100
-        private void BTN_Percent_Click(object sender, RoutedEventArgs e)
+        public void BTN_Percent_Click(object sender, RoutedEventArgs e)
         {
             double nombre = LireNombre();
             TB_Display.Text = (nombre / 100).ToString();
